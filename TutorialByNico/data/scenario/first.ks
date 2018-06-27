@@ -1,5 +1,5 @@
  ;メッセージレイヤの高さとtopの位置を変更
-[position height=160 top=430]
+[position height=180 top=430]
 ;メッセージレイヤの色と透明度を変更
 [position color=0xff99ee opacity=200]
 ;メッセージレイヤに名前表示用の余白を作る
@@ -21,20 +21,70 @@
 [cm]
 [chara_show name="VNico"] 
 #VNico
-はじめまして。にこでーす♡[l][cm]
+[playse storage="1cb2358.ogg"]
+ファイトよ！[l][cm]
+
 [chara_show name="PNico"] 
 #PNico
-はじめまして。にこでーす♡[l][cm]
+[playse storage="1cb2320.ogg"]
+盛り上がってるー？[l][cm]
+
 [chara_show name="WNico"] 
 #WNico
-はじめまして。にこでーす♡[l][cm]
+[playse storage="1cb231f.ogg"]
+らぶにこ♡[l][cm]
 
-#
-もう一回聴く？[l][r]
+;選択肢のルーチンに飛ぶ。
+[call target=*select]
 
-[link target=*start]はい。[endlink][r]
-[link target=*end]いいえ。[endlink][r]
+*select
+[chara_show name="VNico"] 
+[chara_show name="PNico"] 
+[chara_show name="WNico"] 
+
+#3人
+ねえ、誰とおはなしするの？[l][r]
+
+[link target=*VNico]バレンタインにこちゃん[endlink][r]
+[link target=*PNico]セーラーにこちゃん[endlink][r]
+[link target=*WNico]魔女っ子にこちゃん[endlink][r]
 [s]
 
-*end
-[close]
+*VNico
+[cm]
+[chara_hide name="PNico"]
+[chara_hide name="WNico"]
+#VNico
+にこを選んでくれてありがとう♡[l][cm]
+[playse storage="394e6f5.ogg"]
+さむっ……今日さむっ……でもおしゃれのためには我慢も必要よ！[l][cm]
+
+;選択肢のルーチンに飛ぶ。
+[call target=*select]
+
+*PNico
+[cm]
+[chara_hide name="VNico"]
+[chara_hide name="WNico"]
+#PNico
+にこを選んでくれてありがとう♡[l][cm]
+[playse storage="394e7e8.ogg"]
+今日のにこは、港で未だ帰らぬ恋人を待つ可憐な美少女！[r]
+ちなみに、帰らぬ恋人役は……[l][cm]
+
+;選択肢のルーチンに飛ぶ。
+[call target=*select]
+
+
+*WNico
+[cm]
+[chara_hide name="VNico"]
+[chara_hide name="PNico"]
+#WNico
+にこを選んでくれてありがとう♡[l][cm]
+[playse storage="394e804.ogg"]
+そんなにゼリービーンズが欲しいの？[r]
+仕方ないわねぇ、何色がいい？[l][cm]
+
+;選択肢のルーチンに飛ぶ。
+[call target=*select]
