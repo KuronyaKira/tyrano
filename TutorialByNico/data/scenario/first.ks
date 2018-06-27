@@ -5,11 +5,14 @@
 
 ;背景画像を設定 
 [image layer="base" page="fore" storage="hokoten.png"] 
-[image layer=1 storage=title.png visible=true top=100 left=200] 
+;タイトル画像を設定
+[image layer=1 storage="title.png" visible=true top=100 left=200] 
 
+;はじめからボタン
 [locate x=220 y=300 ] 
 [button graphic="start.png" target=*first] 
 
+;つづきからボタン
 [locate x=500 y=300 ] 
 [button graphic="load.png" target=*loadmenu] 
 
