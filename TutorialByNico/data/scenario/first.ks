@@ -24,7 +24,7 @@
 [showload] 
 
 [jump target=*title] 
-[s] 
+[s]  
 
 ;ストーリー最初から 
 *first
